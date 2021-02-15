@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3286331822413284091}
   - component: {fileID: 6775851020127425952}
   - component: {fileID: 254790179564394205}
+  - component: {fileID: 5111019211548921624}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player1
@@ -59,7 +60,6 @@ MonoBehaviour:
   jumpBufferTime: 0.1
   source: {fileID: 254790179564394205}
   jumpSound: {fileID: 8300000, guid: 8b772f38bed9f394db4026482c2fb8e4, type: 3}
-  dashSound: {fileID: 0}
 --- !u!50 &3286331822413284091
 Rigidbody2D:
   serializedVersion: 4
@@ -203,6 +203,32 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5111019211548921624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115527992445001991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 0
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: a3f8fc41
+  m_ShapePath:
+  - {x: -0.18044043, y: 0, z: 0}
+  - {x: 0.18044043, y: 0, z: 0}
+  - {x: 0.18044043, y: 0.9587436, z: 0}
+  - {x: -0.18044043, y: 0.9587436, z: 0}
+  m_ShapePathHash: 0
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -19194
 --- !u!1 &4809416132588704628
 GameObject:
   m_ObjectHideFlags: 0
