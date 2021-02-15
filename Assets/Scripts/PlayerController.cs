@@ -20,11 +20,13 @@ namespace AGDDPlatformer
 
         float lastJumpTime;
         float lastGroundedTime;
-        bool canJump;
+        public bool canJump;
         bool jumpReleased;
-        Vector2 move;
+        public Vector2 move;
+        public bool gravityShift = false;
+        public bool flipped;
 
-        SpriteRenderer spriteRenderer;
+        public SpriteRenderer spriteRenderer;
 
         void Awake()
         {
@@ -89,20 +91,46 @@ namespace AGDDPlatformer
                 }
                 jumpReleased = false;
             }
+            
+            
 
             velocity.x = move.x * maxSpeed;
+
+            if (gravityShift)
+            {
+
+                velocity.x *= -1;
+
+            }
 
             /* --- Adjust Sprite --- */
 
             // Assume the sprite is facing right, flip it if moving left
             if (move.x > 0.01f)
             {
-                spriteRenderer.flipX = false;
+                if (flipped)
+                {
+                    spriteRenderer.flipX = true;
+                }
+                else 
+                {
+                    spriteRenderer.flipX = false;
+                }
+                
             }
             else if (move.x < -0.01f)
             {
-                spriteRenderer.flipX = true;
+                if (flipped)
+                {
+                    spriteRenderer.flipX = false;
+                }
+                else
+                {
+                    spriteRenderer.flipX = true;
+                }
             }
+
+            
         }
 
         public void ResetPlayer()
