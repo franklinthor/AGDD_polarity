@@ -7,6 +7,7 @@ TagManager:
   - Player1
   - Player2
   - Spike
+  - MovingBox
   layers:
   - Default
   - TransparentFX
@@ -17,8 +18,8 @@ TagManager:
   - 
   - 
   - Player
-  - 
-  - 
+  - Interactable
+  - MovingBox
   - 
   - 
   - 
@@ -43,4 +44,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1107097763
+    locked: 0
+  - name: foreground
+    uniqueID: 2297104921
+    locked: 0
+  - name: Player
+    uniqueID: 1014208547
+    locked: 0
+  - name: Goal
+    uniqueID: 187361337
+    locked: 0
+  - name: Gravity
+    uniqueID: 4287010407
     locked: 0
