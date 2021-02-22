@@ -40,7 +40,6 @@ TagManager:
   - 
   - 
   - 
-  - 
   m_SortingLayers:
   - name: Default
     uniqueID: 0
@@ -56,4 +55,7 @@ TagManager:
     locked: 0
   - name: Goal
     uniqueID: 187361337
+    locked: 0
+  - name: Gravity
+    uniqueID: 4287010407
     locked: 0
