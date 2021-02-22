@@ -24,6 +24,8 @@ namespace AGDDPlatformer
         bool jumpReleased;
         public Vector2 move;
         public bool gravityShift = false;
+        public bool getGravity = true;
+        public float orignalGravity;
         public bool flipped;
 
         public SpriteRenderer spriteRenderer;
@@ -32,9 +34,18 @@ namespace AGDDPlatformer
         {
             spriteRenderer = GetComponentInChildren<SpriteRenderer>();
             lastJumpTime = -jumpBufferTime * 2;
-
             startPosition = transform.position;
+            if (getGravity)
+            {
+                orignalGravity = gravityModifier;
+                getGravity = false;
+            }
             startOrientation = spriteRenderer.flipX;
+        }
+
+        public void setGravity()
+        {
+            gravityModifier = orignalGravity;
         }
 
         void Update()
@@ -135,8 +146,20 @@ namespace AGDDPlatformer
 
         public void ResetPlayer()
         {
+            gravityModifier = orignalGravity;
             transform.position = startPosition;
-            spriteRenderer.flipX = startOrientation;
+            if (spriteRenderer.flipY == startOrientation)
+            {
+                spriteRenderer.flipX = startOrientation;
+            }
+            else
+            {
+                spriteRenderer.flipY = startOrientation;
+                spriteRenderer.flipX = startOrientation;
+            }
+            
+            
+            
 
             lastJumpTime = -jumpBufferTime * 2;
 
