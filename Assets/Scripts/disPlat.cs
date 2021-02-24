@@ -5,8 +5,8 @@ using AGDDPlatformer;
 
 public class disPlat : MonoBehaviour
 {
-    public int killTime = 1;
-    public int respawnTime = 1;
+    public float killTime = 1.0f;
+    public float respawnTime = 1.0f;
     private BoxCollider2D collider;
     private GameObject spriteObject;
     // Start is called before the first frame update
